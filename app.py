@@ -34,7 +34,7 @@ with st.form(key='periodontitis'):
     Q4 = st.number_input('Loose teeth without injury',value=0.)
     Q6 = st.number_input('Teeth do not look right',value=0.)     
     st.form_submit_button('press to calculate')
-         
+
 result = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
 if result < 0.42 :
     st.write(f'Predicted score is {result}')
