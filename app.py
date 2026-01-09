@@ -1,4 +1,5 @@
 import streamlit as st
+import math
 
 def reset_form_values():
     # Reset Periodontitis keys
@@ -51,7 +52,8 @@ with st.form(key='severeperiodontitis'):
     Q6 = st.number_input('Teeth do not look right',value=0.)     
     st.form_submit_button('press to calculate')
 
-result = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
+resulta = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
+result = 1 / (1 + math.exp({resulta})
 if result < 0.42 :
     st.write(f'Predicted score is {result}')
     st.write("**:green[LOW RISK]**")
