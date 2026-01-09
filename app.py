@@ -50,7 +50,7 @@ with st.form(key='severeperiodontitis'):
     smoke = st.number_input('Smoking', key='s_smoke')  
     Q1 = st.number_input('Gum disease', key='s_Q1')
     Q2 = st.number_input('Health of teeth and gums', key='s_Q2')   
-    Q4 = st.number_input('Loose teeth without injury' key='s_Q4')
+    Q4 = st.number_input('Loose teeth without injury', key='s_Q4')
     Q6 = st.number_input('Teeth do not look right', key='s_Q6')     
     st.form_submit_button('Calculate risk')
 
