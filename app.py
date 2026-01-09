@@ -5,7 +5,7 @@ st.write("""
          """
          )
 st.markdown('####')
-st.write('**Periodontitis**')
+st.write(':blue**Periodontitis**')
 
 with st.form(key='periodontitis'):
     a = st.number_input('a',value=1.)
@@ -20,7 +20,7 @@ else:
          
 st.markdown('####')
 
-st.write('**Severe Periodontitis**')
+st.write(':blue**Severe Periodontitis**')
 
 with st.form(key='severe'):
     a = st.number_input('a',value=1.)
