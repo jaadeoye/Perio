@@ -3,17 +3,17 @@ import math
 
 def reset_form_values():
     # Reset Periodontitis keys
-    st.session_state['p_age'] = 0.0
-    st.session_state['p_gender'] = 0.0
-    st.session_state['p_q2'] = 0.0
-    st.session_state['p_q4'] = 0.0
+    st.session_state['age'] = 0.0
+    st.session_state['gender'] = 0.0
+    st.session_state['Q2'] = 0.0
+    st.session_state['Q4'] = 0.0
     # Reset Severe Periodontitis keys
-    st.session_state['s_age'] = 0.0
-    st.session_state['s_smoke'] = 0.0
-    st.session_state['s_q1'] = 0.0
-    st.session_state['s_q2'] = 0.0
-    st.session_state['s_q4'] = 0.0
-    st.session_state['s_q6'] = 0.0
+    st.session_state['age'] = 0.0
+    st.session_state['smoke'] = 0.0
+    st.session_state['Q1'] = 0.0
+    st.session_state['Q2'] = 0.0
+    st.session_state['Q4'] = 0.0
+    st.session_state['Q6'] = 0.0
 
 st.write("""
          # Model-based Screening for Periodontitis and Severe Periodontitis
