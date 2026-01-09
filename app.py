@@ -50,11 +50,11 @@ with st.form(key='severeperiodontitis'):
     Q2 = st.number_input('Health of teeth and gums',value=0.)   
     Q4 = st.number_input('Loose teeth without injury',value=0.)
     Q6 = st.number_input('Teeth do not look right',value=0.)     
-    st.form_submit_button('press to calculate')
+    st.form_submit_button('Calculate risk')
 
 resulta = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
 resultb = - resulta
-result = 1 / (1 + math.exp(resultb)
+result = 1 / (1 + math.exp(resultb))
 if result < 0.42 :
     st.write(f'Predicted score is {result}')
     st.write("**:green[LOW RISK]**")
