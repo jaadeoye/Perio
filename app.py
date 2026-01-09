@@ -9,12 +9,12 @@ st.write('**:violet[Periodontitis]**')
 
 with st.form(key='periodontitis'):
     age = st.number_input('age',value=0.)
-    smoke = st.number_input('Smoking',value=0.) 
+    gender = st.number_input('Gender',value=0.) 
     Q2 = st.number_input('Health of teeth and gums',value=0.)   
     Q4 = st.number_input('Loose teeth without injury',value=0.)   
     st.form_submit_button('Calculate risk')
 
-result = a + b**2
+result = ((1.406 * Q2) + (1.659 * Q4) + (0.105 * age) + (0.834 * gender) - 4.431)
 if result < 0 :
     st.error('negative result')
 else:
