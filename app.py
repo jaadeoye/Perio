@@ -5,9 +5,9 @@ st.write("""
          """
          )
 
-st.write('Periodontitis')
+st.write(**'Periodontitis'**)
 
-with st.form(key='form1'):
+with st.form(key='periodontitis'):
     a = st.number_input('a',value=1.)
     b = st.number_input('b',value=2.)    
     st.form_submit_button('press to calculate')
@@ -18,9 +18,9 @@ if result < 0 :
 else:
     st.write(f'result is {result}')
 
-st.write('Severe Periodontitis')
+st.write(**'Severe Periodontitis'**)
 
-with st.form(key='form2'):
+with st.form(key='severe'):
     a = st.number_input('a',value=1.)
     b = st.number_input('b',value=2.)    
     st.form_submit_button('press to calculate')
