@@ -18,11 +18,9 @@ if result < 0 :
 else:
     st.write(f'result is {result}')
 
-
-
 st.write('Severe Periodontitis')
 
-with st.form(key='form1'):
+with st.form(key='form2'):
     a = st.number_input('a',value=1.)
     b = st.number_input('b',value=2.)    
     st.form_submit_button('press to calculate')
