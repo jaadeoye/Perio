@@ -7,8 +7,10 @@ st.write("""
 st.markdown('####')
 st.write('**:violet[Periodontitis]**')
 
+st.button("Reset Values", on_click=reset_form_values)
+
 with st.form(key='periodontitis'):
-    age = st.number_input('age',value=0.)
+    age = st.number_input('Age',value=0.)
     gender = st.number_input('Gender',value=0.) 
     Q2 = st.number_input('Health of teeth and gums',value=0.)   
     Q4 = st.number_input('Loose teeth without injury',value=0.)   
@@ -27,7 +29,7 @@ st.markdown('####')
 st.write('**:violet[Severe Periodontitis]**')
 
 with st.form(key='severeperiodontitis'):
-    age = st.number_input('age')
+    age = st.number_input('Age')
     smoke = st.number_input('Smoking',value=0.)  
     Q1 = st.number_input('Gum disease',value=0.)
     Q2 = st.number_input('Health of teeth and gums',value=0.)   
