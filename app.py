@@ -8,14 +8,11 @@ st.markdown('####')
 st.write('**:violet[Periodontitis]**')
 
 with st.form(key='periodontitis'):
-    Age = st.number_input('age',value=0.)
-    Smoking = st.number_input('smoke',value=0.)
-    Gender = st.number_input('gender',value=0.)   
-    Gum disease = st.number_input('Q1',value=0.)
-    Health of teeth and gums = st.number_input('Q2',value=0.)   
-    Loose teeth without injury = st.number_input('Q4',value=0.)
-    Teeth do not look right = st.number_input('Q6',value=0.)     
-    st.form_submit_button('press to calculate')
+    age = st.number_input('age',value=0.)
+    smoke = st.number_input('Smoking',value=0.) 
+    Q2 = st.number_input('Health of teeth and gums',value=0.)   
+    Q4 = st.number_input('Loose teeth without injury',value=0.)   
+    st.form_submit_button('Calculate risk')
 
 result = a + b**2
 if result < 0 :
@@ -27,9 +24,14 @@ st.markdown('####')
 
 st.write('**:violet[Severe Periodontitis]**')
 
-with st.form(key='severe'):
-    a = st.number_input('a',value=1.)
-    b = st.number_input('b',value=2.)    
+with st.form(key='periodontitis'):
+    age = st.number_input('age',value=0.)
+    smoke = st.number_input('Smoking',value=0.)
+    gender = st.number_input('Gender',value=0.)   
+    Q1 = st.number_input('Gum disease',value=0.)
+    Q2 = st.number_input('Health of teeth and gums',value=0.)   
+    Q4 = st.number_input('Loose teeth without injury',value=0.)
+    Q6 = st.number_input('Teeth do not look right',value=0.)     
     st.form_submit_button('press to calculate')
 
 result = a + b**2
