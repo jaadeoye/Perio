@@ -27,20 +27,21 @@ st.markdown('####')
 st.write('**:violet[Severe Periodontitis]**')
 
 with st.form(key='periodontitis'):
-    age = st.number_input('age',value=0.)
-    smoke = st.number_input('Smoking',value=0.)
-    gender = st.number_input('Gender',value=0.)   
+    age = st.number_input('age')
+    smoke = st.number_input('Smoking',value=0.)  
     Q1 = st.number_input('Gum disease',value=0.)
     Q2 = st.number_input('Health of teeth and gums',value=0.)   
     Q4 = st.number_input('Loose teeth without injury',value=0.)
     Q6 = st.number_input('Teeth do not look right',value=0.)     
     st.form_submit_button('press to calculate')
-
-result = a + b**2
-if result < 0 :
-    st.error('negative result')
+1.055 × Q1 + 1.778 × Q2 + 1.142 × Q4 + 1.380 × Q6 + 0.130 × Age + 2.110 × Smoking − 9.785 (threshold: 0.42)
+result = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
+if result < 0.42 :
+    st.write(f'Predicted score is {result}')
+    st.write("**:green[LOW RISK]**")
 else:
-    st.write(f'result is {result}')
+    st.write(f'Predicted score is {result}')
+    st.write("**:red[HIGH RISK]**")
 
 
 
