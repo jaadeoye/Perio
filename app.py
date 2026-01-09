@@ -20,10 +20,10 @@ st.write("""
          # Model-based Screening for Periodontitis and Severe Periodontitis
          """
          )
-st.markdown('####')
-st.write('**:violet[Periodontitis]**')
 
 st.button("Reset Values", on_click=reset_form_values)
+st.markdown('####')
+st.write('**:violet[Periodontitis]**')
 
 with st.form(key='periodontitis'):
     age = st.number_input('Age', key='p_age')
