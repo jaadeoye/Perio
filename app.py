@@ -8,8 +8,10 @@ st.markdown('####')
 st.write('**:violet[Periodontitis]**')
 
 with st.form(key='periodontitis'):
-    a = st.number_input('a',value=1.)
-    b = st.number_input('b',value=2.)    
+         Gum disease = st.number_input('Q1',value=0.)
+    Health of teeth and gums = st.number_input('Q2',value=0.)  
+    Gum disease = st.number_input('Q1',value=0.)
+    Health of teeth and gums = st.number_input('Q2',value=0.)    
     st.form_submit_button('press to calculate')
 
 result = a + b**2
