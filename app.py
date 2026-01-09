@@ -16,9 +16,11 @@ with st.form(key='periodontitis'):
 
 result = ((1.406 * Q2) + (1.659 * Q4) + (0.105 * age) + (0.834 * gender) - 4.431)
 if result < 0.73 :
-    st.write('Predicted score is {result}', "**:green[LOW RISK]**")
+    st.write(f'Predicted score is {result}')
+    st.write("**:green[LOW RISK]**")
 else:
-    st.write('Predicted score is {result}', "**:red[HIGH RISK]**")
+    st.write(f'Predicted score is {result}')
+    st.write("**:red[HIGH RISK]**")
          
 st.markdown('####')
 
