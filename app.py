@@ -5,6 +5,9 @@ st.write("""
          """
          )
 
+st.markdown('####')
+st.markdown('####')
+
 st.write('**Periodontitis**')
 
 with st.form(key='periodontitis'):
@@ -17,6 +20,9 @@ if result < 0 :
     st.error('negative result')
 else:
     st.write(f'result is {result}')
+
+st.markdown('####')
+st.markdown('####')
 
 st.write('**Severe Periodontitis**')
 
