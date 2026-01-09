@@ -5,7 +5,7 @@ st.write("""
          """
          )
 
-st.write(**'Periodontitis'**)
+st.write('**Periodontitis**')
 
 with st.form(key='periodontitis'):
     a = st.number_input('a',value=1.)
@@ -18,7 +18,7 @@ if result < 0 :
 else:
     st.write(f'result is {result}')
 
-st.write(**'Severe Periodontitis'**)
+st.write('**Severe Periodontitis**')
 
 with st.form(key='severe'):
     a = st.number_input('a',value=1.)
