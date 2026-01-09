@@ -26,7 +26,7 @@ st.markdown('####')
 
 st.write('**:violet[Severe Periodontitis]**')
 
-with st.form(key='periodontitis'):
+with st.form(key='severeperiodontitis'):
     age = st.number_input('age')
     smoke = st.number_input('Smoking',value=0.)  
     Q1 = st.number_input('Gum disease',value=0.)
