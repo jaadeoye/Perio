@@ -53,7 +53,8 @@ with st.form(key='severeperiodontitis'):
     st.form_submit_button('press to calculate')
 
 resulta = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
-result = 1 / (1 + math.exp({resulta})
+resultb = - resulta
+result = 1 / (1 + math.exp(resultb)
 if result < 0.42 :
     st.write(f'Predicted score is {result}')
     st.write("**:green[LOW RISK]**")
