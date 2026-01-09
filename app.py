@@ -31,12 +31,14 @@ with st.form(key='periodontitis'):
     Q4 = st.number_input('Loose teeth without injury',value=0.)   
     st.form_submit_button('Calculate risk')
 
-result = ((1.406 * Q2) + (1.659 * Q4) + (0.105 * age) + (0.834 * gender) - 4.431)
+resulta = ((1.406 * Q2) + (1.659 * Q4) + (0.105 * age) + (0.834 * gender) - 4.431)
+resultb = - resulta
+result = 1 / (1 + math.exp(resultb))
 if result < 0.73 :
-    st.write(f'Predicted score is {result}')
+    st.write(f'Predicted score is {result:.3g}')
     st.write("**:green[LOW RISK]**")
 else:
-    st.write(f'Predicted score is {result}')
+    st.write(f'Predicted score is {result:.3g}')
     st.write("**:red[HIGH RISK]**")
          
 st.markdown('####')
@@ -56,10 +58,10 @@ resulta = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * 
 resultb = - resulta
 result = 1 / (1 + math.exp(resultb))
 if result < 0.42 :
-    st.write(f'Predicted score is {result}')
+    st.write(f'Predicted score is {result:.3g}')
     st.write("**:green[LOW RISK]**")
 else:
-    st.write(f'Predicted score is {result}')
+    st.write(f'Predicted score is {result:.3g}')
     st.write("**:red[HIGH RISK]**")
 
 
