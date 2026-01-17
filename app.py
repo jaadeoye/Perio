@@ -20,7 +20,7 @@ st.write("""
          # Model-based Screening for Periodontitis and Severe Periodontitis
          """
          )
-op_gender = {"Female": 1, "Male": 2}
+op_gender = {"Female": 0, "Male": 1}
 
 st.button("Reset Values", on_click=reset_form_values)
 st.markdown('####')
