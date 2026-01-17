@@ -59,7 +59,7 @@ if submit:
     if result_sev < 0.42 :
         st.write(f'Severe periodontitis calculated risk is **:green[LOW]** with predicted score **:green[{result_sevpercent:.1f}%]**')
     else:
-        st.write(f'Severe periodontitis calculated risk is **:red[HIGH RISK]** with predicted score **:red[{result_sev:.1f}%]**')
+        st.write(f'Severe periodontitis calculated risk is **:red[HIGH RISK]** with predicted score **:red[{result_sevpercent:.1f}%]**')
 
 
 st.markdown('####')
