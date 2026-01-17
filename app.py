@@ -3,7 +3,7 @@ import math
 
 def reset_form_values():
     # Periodontitis keys
-    st.session_state['p_age'] = 0.0
+    st.session_state['p_age'] = 0
     st.session_state['p_gender'] = 'Female'
     st.session_state['p_smoke'] = 'No'
     st.session_state['p_Q1'] = 'No'    
