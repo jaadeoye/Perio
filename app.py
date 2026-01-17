@@ -5,6 +5,7 @@ def reset_form_values():
     # Periodontitis keys
     st.session_state['p_age'] = 0.0
     st.session_state['p_gender'] = 'Female'
+    st.session_state['p_gender'] = 'No'
     st.session_state['p_Q1'] = 'No'    
     st.session_state['p_Q2'] = 'Excellent'
     st.session_state['p_Q4'] = 'No'
@@ -30,7 +31,7 @@ with st.form(key='periodontitis'):
     age = st.number_input('Age', key='p_age', min_value=0, max_value=120,  step=1, format="%d")
     gender= st.radio('Gender', op_gender.keys(), key='p_gender') 
     gender= op_gender[gender]
-    smoke=st.radio('Smoking', op_smoke.keys(), keys='s_smoke')
+    smoke=st.radio('Smoking', op_smoke.keys(), keys='p_smoke')
     smoke=op_smoke(smoke)
     Q1=st.radio('Do you think you may have gum disease?', op_q2.keys(), keys='p_Q1')
     Q1=op_q1(Q1)
