@@ -46,18 +46,20 @@ with st.form(key='periodontitis'):
 if submit:
     resulta = ((1.406 * Q2) + (1.659 * Q4) + (0.105 * age) + (0.834 * gender) - 4.431)
     result = 1 / (1 + math.exp(-resulta))
+    result_percent= result * 100
     if result < 0.73 :
-        st.write(f'Periodontitis calculated risk is **:green[LOW]** with predicted score {result:.3g}')
+        st.write(f'Periodontitis calculated risk is **:green[LOW]** with predicted score {result_percent:.1f}%')
     
     else:
-        st.write(f'Periodontitis calculated risk is **:red[HIGH RISK]** with predicted score {result:.3g}')
+        st.write(f'Periodontitis calculated risk is **:red[HIGH RISK]** with predicted score {result_percent:.1f}%')
 
     resultb = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
     result_sev = 1 / (1 + math.exp(-resultb))
+    result_sevpercent= result_sev * 100
     if result_sev < 0.42 :
-        st.write(f'Severe periodontitis calculated risk is **:green[LOW]** with predicted score {result_sev:.3g}')
+        st.write(f'Severe periodontitis calculated risk is **:green[LOW]** with predicted score {result_sevpercent:.1f}%')
     else:
-        st.write(f'Severe periodontitis calculated risk is **:red[HIGH RISK]** with predicted score {result_sev:.3g}')
+        st.write(f'Severe periodontitis calculated risk is **:red[HIGH RISK]** with predicted score {result_sev:.1f}%')
 
 
 st.markdown('####')
