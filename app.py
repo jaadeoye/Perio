@@ -40,10 +40,7 @@ with st.form(key='periodontitis'):
     Q4=st.radio('Have you ever had any teeth become loose on their own, without injury?', op_q4.keys(), keys='p_Q4')
     Q4=op_q1(Q4)
     Q6=st.radio('During the past 3 months, have you noticed a tooth that doesn’t look right?', op_q46.keys(), keys='p_Q6')
-    Q6=op_q1(Q6)
-    #gender = st.number_input('Gender', key='p_gender', min_value=0, max_value=5,  step=1, format="%d") 
-    #Q2 = st.number_input('Health of teeth and gums', key='p_Q2', min_value=0, max_value=120,  step=1, format="%d")   
-    #Q4 = st.number_input('Loose teeth without injury', key='p_Q4', min_value=0, max_value=120,  step=1, format="%d")   
+    Q6=op_q1(Q6)  
     st.form_submit_button('Calculate risk')
 
 resulta = ((1.406 * Q2) + (1.659 * Q4) + (0.105 * age) + (0.834 * gender) - 4.431)
