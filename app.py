@@ -41,7 +41,7 @@ with st.form(key='periodontitis'):
     Q4=op_q1(Q4)
     Q6=st.radio('During the past 3 months, have you noticed a tooth that doesn’t look right?', op_q46.keys(), keys='p_Q6')
     Q6=op_q1(Q6)  
-    st.form_submit_button('Calculate risk')
+st.form_submit_button('Calculate risk')
 
 resulta = ((1.406 * Q2) + (1.659 * Q4) + (0.105 * age) + (0.834 * gender) - 4.431)
 result = 1 / (1 + math.exp(-resulta))
