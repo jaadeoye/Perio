@@ -43,7 +43,7 @@ with st.form(key='periodontitis'):
     #gender = st.number_input('Gender', key='p_gender', min_value=0, max_value=5,  step=1, format="%d") 
     #Q2 = st.number_input('Health of teeth and gums', key='p_Q2', min_value=0, max_value=120,  step=1, format="%d")   
     #Q4 = st.number_input('Loose teeth without injury', key='p_Q4', min_value=0, max_value=120,  step=1, format="%d")   
-    #st.form_submit_button('Calculate risk')
+    st.form_submit_button('Calculate risk')
 
 resulta = ((1.406 * Q2) + (1.659 * Q4) + (0.105 * age) + (0.834 * gender) - 4.431)
 result = 1 / (1 + math.exp(-resulta))
