@@ -31,17 +31,17 @@ with st.form(key='periodontitis'):
     age = st.number_input('Age', key='p_age', min_value=0, max_value=120,  step=1, format="%d")
     gender= st.radio('Gender', op_gender.keys(), key='p_gender') 
     gender= op_gender[gender]
-    smoke=st.radio('Smoking', op_smoke.keys(), keys='p_smoke')
-    smoke=op_smoke(smoke)
-    Q1=st.radio('Do you think you may have gum disease?', op_q2.keys(), keys='p_Q1')
-    Q1=op_q1(Q1)
-    Q2=st.radio('Overall, how would you rate the health of your teeth and gums?', op_q2.keys(), keys='p_Q2')
-    Q2=op_q1(Q2)
-    Q4=st.radio('Have you ever had any teeth become loose on their own, without injury?', op_q4.keys(), keys='p_Q4')
-    Q4=op_q1(Q4)
-    Q6=st.radio('During the past 3 months, have you noticed a tooth that doesn’t look right?', op_q46.keys(), keys='p_Q6')
-    Q6=op_q1(Q6)  
-st.form_submit_button('Calculate risk')
+    smoke=st.radio('Smoking', op_smoke.keys(), key='p_smoke')
+    smoke=op_smoke[smoke]
+    Q1=st.radio('Do you think you may have gum disease?', op_q1.keys(), key='p_Q1')
+    Q1=op_q1[Q1]
+    Q2=st.radio('Overall, how would you rate the health of your teeth and gums?', op_q2.keys(), key='p_Q2')
+    Q2=op_q2[Q2]
+    Q4=st.radio('Have you ever had any teeth become loose on their own, without injury?', op_q4.keys(), key='p_Q4')
+    Q4=op_q4[Q4]
+    Q6=st.radio('During the past 3 months, have you noticed a tooth that doesn’t look right?', op_q6.keys(), key='p_Q6')
+    Q6=op_q6[Q6]  
+    st.form_submit_button('Calculate risk')
 
 resulta = ((1.406 * Q2) + (1.659 * Q4) + (0.105 * age) + (0.834 * gender) - 4.431)
 result = 1 / (1 + math.exp(-resulta))
@@ -54,9 +54,9 @@ else:
 resultb = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
 result_sev = 1 / (1 + math.exp(-resultb))
 if result_sev < 0.42 :
-    st.write(f'Severe periodontitis calculated risk is **:green[LOW]** with predicted score {result:.3g}')
+    st.write(f'Severe periodontitis calculated risk is **:green[LOW]** with predicted score {result_sev:.3g}')
 else:
-    st.write(f'Severe periodontitis calculated risk is **:red[HIGH RISK]** with predicted score {result:.3g}')
+    st.write(f'Severe periodontitis calculated risk is **:red[HIGH RISK]** with predicted score {result_sev:.3g}')
 
 
 st.markdown('####')
