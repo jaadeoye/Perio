@@ -1,11 +1,10 @@
 import streamlit as st
 import math
 
-@st.dialog("PerioDetect")
+@st.dialog("Welcome to the App!")
 def show_intro():
-    st.write("
-    •	Your personal data is protected with strict privacy measures")
-    
+    st.write("This pop-up introduces your amazing tool.")
+    st.info("You can add text, images, or even instructions here.")
     if st.button("Got it!"):
         st.rerun() # Closes the dialog programmatically
 
