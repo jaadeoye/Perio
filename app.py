@@ -104,7 +104,6 @@ if submit:
         st.write("**Severe Periodontitis Risk:**")
         st.write(f'🔴 High Risk (Predicted score: **:red[{result_sevpercent:.1f}%]**)')
         st.write("Your responses indicate a high likelihood of having severe periodontitis.")
-    st.markdown('####')
     if result < 0.73 and result_sev < 0.42:
         st.write("**Recommendation:** Continue maintaining good oral hygiene and schedule regular dental check-ups to stay healthy.")
     elif result >= 0.73 and result_sev < 0.42:
