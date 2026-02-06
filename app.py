@@ -83,12 +83,12 @@ if submit:
         duration = end_time - start
     
     if result < 0.73 :
-        st.write("Periodontitis Risk:")
+        st.write("**Periodontitis Risk:**")
         st.write(f'🔵 Low Risk (Predicted score: **:green[{result_percent:.1f}%]**)')
         st.write("Your responses indicate a low likelihood of having periodontitis.")
     
     else:
-        st.write("Periodontitis Risk:")
+        st.write("**Periodontitis Risk:**")
         st.write(f'🔴 High Risk (Predicted score: **:red[{result_percent:.1f}%]**)')
         st.write("Your responses indicate a high likelihood of having periodontitis.")
 
@@ -96,11 +96,15 @@ if submit:
     result_sev = 1 / (1 + math.exp(-resultb))
     result_sevpercent= result_sev * 100
     if result_sev < 0.42 :
-        st.write(f'Severe periodontitis calculated risk is **:green[LOW]** with predicted score **:green[{result_sevpercent:.1f}%]**')
+        st.write("**Severe Periodontitis Risk:**")
+        st.write(f'🔵 Low Risk (Predicted score: **:green[{result_sevpercent:.1f}%]**)')
+        st.write("Your responses indicate a low likelihood of having severe periodontitis.")
         st.success(f"Took {duration:.2f} seconds to complete.")
         st.session_state.start_time = time.time()
     else:
-        st.write(f'Severe periodontitis calculated risk is **:red[HIGH RISK]** with predicted score **:red[{result_sevpercent:.1f}%]**')
+        st.write("**Severe Periodontitis Risk:**")
+        st.write(f'🔵 Low Risk (Predicted score: **:red[{result_sevpercent:.1f}%]**)')
+        st.write("Your responses indicate a high likelihood of having severe periodontitis.")
         st.success(f"Took {duration:.2f} seconds to complete.")
         st.session_state.start_time = time.time()
 
