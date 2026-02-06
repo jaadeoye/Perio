@@ -4,7 +4,7 @@ import math
 @st.dialog("PerioDetect")
 def show_intro():
     st.write("Welcome to PerioDetect, a rapid self-service screening tool developed and validated using real cases by dentists and researchers at HKU Dentistry to help you assess your risk of gum disease (periodontitis), a common oral disease. Please follow the steps below to complete the screening.")
-    if st.button("Got it!"):
+    if st.button("I understand and agree to proceed"):
         st.rerun() # Closes the dialog programmatically
 
 # 2. Check Session State at launch
