@@ -49,6 +49,9 @@ st.button("Reset Values", on_click=reset_form_values)
 st.markdown('####')
 st.write('**:violet[Input form]**')
 
+if 'start_time' not in st.session_state:
+    st.session_state.start_time = time.time()
+
 with st.form(key='periodontitis'):
     age = st.number_input('Age', key='p_age', min_value=0, max_value=120,  step=1, format="%d")
     gender= st.radio('Gender', op_gender.keys(), key='p_gender') 
@@ -69,19 +72,26 @@ if submit:
     resulta = ((1.406 * Q2) + (1.659 * Q4) + (0.105 * age) + (0.834 * gender) - 4.431)
     result = 1 / (1 + math.exp(-resulta))
     result_percent= result * 100
+    end_time = time.time()
+    duration = end_time - st.session_state.start_time
+    
     if result < 0.73 :
         st.write(f'Periodontitis calculated risk is **:green[LOW]** with predicted score **:green[{result_percent:.1f}%]**')
+        st.success(f"Took {duration:.2f} seconds to complete.")
     
     else:
         st.write(f'Periodontitis calculated risk is **:red[HIGH RISK]** with predicted score **:red[{result_percent:.1f}%]**')
+        st.success(f"Took {duration:.2f} seconds to complete.")
 
     resultb = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
     result_sev = 1 / (1 + math.exp(-resultb))
     result_sevpercent= result_sev * 100
     if result_sev < 0.42 :
         st.write(f'Severe periodontitis calculated risk is **:green[LOW]** with predicted score **:green[{result_sevpercent:.1f}%]**')
+        st.success(f"Took {duration:.2f} seconds to complete.")
     else:
         st.write(f'Severe periodontitis calculated risk is **:red[HIGH RISK]** with predicted score **:red[{result_sevpercent:.1f}%]**')
+        st.success(f"Took {duration:.2f} seconds to complete.")
 
 
 st.markdown('####')
