@@ -22,11 +22,12 @@ def show_intro():
     if st.button("I understand and agree to proceed"):
         st.session_state.intro_shown = True
         st.session_state.start_time = time.time()
-        st.rerun() # Closes the dialog programmatically
+        st.rerun() 
 
-# 2. Check Session State at launch
 if "intro_shown" not in st.session_state:
-    st.session_state.intro_shown = True
+    st.session_state.intro_shown = False
+
+if not st.session_state.intro_shown:
     show_intro()
     
 def reset_form_values():
@@ -103,10 +104,28 @@ if submit:
         st.session_state.start_time = time.time()
     else:
         st.write("**Severe Periodontitis Risk:**")
-        st.write(f'🔵 Low Risk (Predicted score: **:red[{result_sevpercent:.1f}%]**)')
+        st.write(f'🔴 High Risk (Predicted score: **:red[{result_sevpercent:.1f}%]**)')
         st.write("Your responses indicate a high likelihood of having severe periodontitis.")
         st.success(f"Took {duration:.2f} seconds to complete.")
         st.session_state.start_time = time.time()
+    st.markdown('####')
+    st.markdown('####')
+    if result < 0.73 and result_sev < 0.42:
+        st.write("**Recommendation:** Continue maintaining good oral hygiene and schedule regular dental check-ups to stay healthy.")
+    else:
+        None
+
+    if result >= 0.73 and result_sev < 0.42:
+        st.write("**Recommendation:** We advise you to see a dentist promptly for a comprehensive examination and appropriate treatment to manage early-stage periodontitis and prevent progression to severe periodontitis.")
+    else:
+        None
+
+    if result >= 0.73 and result_sev >= 0.42:
+        st.write("**Recommendation:** We strongly recommend scheduling an appointment with your dentist as soon as possible for a comprehensive evaluation and treatment.")
+    else:
+        None
+    
+        
 
 
 st.markdown('####')
