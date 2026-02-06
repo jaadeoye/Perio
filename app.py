@@ -17,15 +17,13 @@ def show_intro():
     st.write("3.	Submit Your Answers")
     st.write("4.	View Your Result")
     if st.button("I understand and agree to proceed"):
+        st.session_state.start_time = time.time()
         st.rerun() # Closes the dialog programmatically
 
 # 2. Check Session State at launch
 if "intro_shown" not in st.session_state:
     st.session_state.intro_shown = True
     show_intro()
-
-if 'start_time' not in st.session_state:
-    st.session_state.start_time = time.time()
     
 def reset_form_values():
     # Periodontitis keys
