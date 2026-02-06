@@ -76,7 +76,10 @@ if submit:
     result = 1 / (1 + math.exp(-resulta))
     result_percent= result * 100
     end_time = time.time()
-    duration = end_time - st.session_state.start_time
+    if start is None:
+        duration=0.0
+    else:
+        duration = end_time - start
     
     if result < 0.73 :
         st.write(f'Periodontitis calculated risk is **:green[LOW]** with predicted score **:green[{result_percent:.1f}%]**')
