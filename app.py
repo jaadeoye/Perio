@@ -2,6 +2,9 @@ import streamlit as st
 import math
 import time
 
+if 'start_time' not in st.session_state:
+    st.session_state.start_time = None
+    
 @st.dialog("PerioDetect")
 def show_intro():
     st.write("Welcome to PerioDetect, a rapid self-service screening tool developed and validated using real cases by dentists and researchers at HKU Dentistry to help you assess your risk of gum disease (periodontitis), a common oral disease. Please follow the steps below to complete the screening.")
@@ -17,6 +20,7 @@ def show_intro():
     st.write("3.	Submit Your Answers")
     st.write("4.	View Your Result")
     if st.button("I understand and agree to proceed"):
+        st.session_state.intro_shown = True
         st.session_state.start_time = time.time()
         st.rerun() # Closes the dialog programmatically
 
