@@ -1,6 +1,19 @@
 import streamlit as st
 import math
 
+@st.dialog("PerioDetect")
+def show_intro():
+    st.write("
+    •	Your personal data is protected with strict privacy measures")
+    
+    if st.button("Got it!"):
+        st.rerun() # Closes the dialog programmatically
+
+# 2. Check Session State at launch
+if "intro_shown" not in st.session_state:
+    st.session_state.intro_shown = True
+    show_intro()
+    
 def reset_form_values():
     # Periodontitis keys
     st.session_state['p_age'] = 0
