@@ -57,7 +57,7 @@ st.markdown('####')
 st.write('**:violet[Input form]**')
 
 with st.form(key='periodontitis'):
-    age = st.number_input('Age', key='p_age', min_value=0, max_value=120,  step=1, format="%d")
+    age = st.number_input('Age', key='p_age', min_value=15, max_value=120,  step=1, format="%d")
     gender= st.radio('Gender', op_gender.keys(), key='p_gender') 
     gender= op_gender[gender]
     smoke=st.radio('Smoking', op_smoke.keys(), key='p_smoke')
