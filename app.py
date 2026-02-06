@@ -112,15 +112,9 @@ if submit:
     st.markdown('####')
     if result < 0.73 and result_sev < 0.42:
         st.write("**Recommendation:** Continue maintaining good oral hygiene and schedule regular dental check-ups to stay healthy.")
-    else:
-        None
-
-    if result >= 0.73 and result_sev < 0.42:
+    elif result >= 0.73 and result_sev < 0.42:
         st.write("**Recommendation:** We advise you to see a dentist promptly for a comprehensive examination and appropriate treatment to manage early-stage periodontitis and prevent progression to severe periodontitis.")
-    else:
-        None
-
-    if result >= 0.73 and result_sev >= 0.42:
+    elif result >= 0.73 and result_sev >= 0.42:
         st.write("**Recommendation:** We strongly recommend scheduling an appointment with your dentist as soon as possible for a comprehensive evaluation and treatment.")
     else:
         None
