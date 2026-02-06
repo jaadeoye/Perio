@@ -13,7 +13,7 @@ def reset_form_values():
 
 
 st.write("""
-         # Model-based Screening for Periodontitis and Severe Periodontitis
+         # PerioDetect
          """
          )
 op_gender = {"Female": 0, "Male": 1}
