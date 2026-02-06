@@ -109,7 +109,6 @@ if submit:
         st.success(f"Took {duration:.2f} seconds to complete.")
         st.session_state.start_time = time.time()
     st.markdown('####')
-    st.markdown('####')
     if result < 0.73 and result_sev < 0.42:
         st.write("**Recommendation:** Continue maintaining good oral hygiene and schedule regular dental check-ups to stay healthy.")
     elif result >= 0.73 and result_sev < 0.42:
