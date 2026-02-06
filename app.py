@@ -22,6 +22,9 @@ def show_intro():
 if "intro_shown" not in st.session_state:
     st.session_state.intro_shown = True
     show_intro()
+
+if 'start_time' not in st.session_state:
+    st.session_state.start_time = time.time()
     
 def reset_form_values():
     # Periodontitis keys
@@ -48,9 +51,6 @@ op_q6 = {"No":0, "Yes":1}
 st.button("Reset Values", on_click=reset_form_values)
 st.markdown('####')
 st.write('**:violet[Input form]**')
-
-if 'start_time' not in st.session_state:
-    st.session_state.start_time = time.time()
 
 with st.form(key='periodontitis'):
     age = st.number_input('Age', key='p_age', min_value=0, max_value=120,  step=1, format="%d")
