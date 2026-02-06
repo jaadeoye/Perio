@@ -83,10 +83,14 @@ if submit:
         duration = end_time - start
     
     if result < 0.73 :
-        st.write(f'Periodontitis calculated risk is **:green[LOW]** with predicted score **:green[{result_percent:.1f}%]**')
+        st.write("Periodontitis Risk:")
+        st.write(f'🔵 Low Risk (Predicted score: **:green[{result_percent:.1f}%]**)')
+        st.write("Your responses indicate a low likelihood of having periodontitis.")
     
     else:
-        st.write(f'Periodontitis calculated risk is **:red[HIGH RISK]** with predicted score **:red[{result_percent:.1f}%]**')
+        st.write("Periodontitis Risk:")
+        st.write(f'🔴 High Risk (Predicted score: **:red[{result_percent:.1f}%]**)')
+        st.write("Your responses indicate a high likelihood of having periodontitis.")
 
     resultb = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
     result_sev = 1 / (1 + math.exp(-resultb))
