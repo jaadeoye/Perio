@@ -78,11 +78,9 @@ if submit:
     
     if result < 0.73 :
         st.write(f'Periodontitis calculated risk is **:green[LOW]** with predicted score **:green[{result_percent:.1f}%]**')
-        st.success(f"Took {duration:.2f} seconds to complete.")
     
     else:
         st.write(f'Periodontitis calculated risk is **:red[HIGH RISK]** with predicted score **:red[{result_percent:.1f}%]**')
-        st.success(f"Took {duration:.2f} seconds to complete.")
 
     resultb = ((1.055 * Q1) + (1.778 * Q2) + (1.142 * Q4) + (1.380 * Q6) + (0.130 * age) + (2.110 * smoke) - 9.785)
     result_sev = 1 / (1 + math.exp(-resultb))
@@ -90,9 +88,11 @@ if submit:
     if result_sev < 0.42 :
         st.write(f'Severe periodontitis calculated risk is **:green[LOW]** with predicted score **:green[{result_sevpercent:.1f}%]**')
         st.success(f"Took {duration:.2f} seconds to complete.")
+        st.session_state.start_time = time.time()
     else:
         st.write(f'Severe periodontitis calculated risk is **:red[HIGH RISK]** with predicted score **:red[{result_sevpercent:.1f}%]**')
         st.success(f"Took {duration:.2f} seconds to complete.")
+        st.session_state.start_time = time.time()
 
 
 st.markdown('####')
