@@ -76,6 +76,7 @@ if submit:
     result = 1 / (1 + math.exp(-resulta))
     result_percent= result * 100
     end_time = time.time()
+    start=st.session_state.start_time
     if start is None:
         duration=0.0
     else:
