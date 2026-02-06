@@ -1,5 +1,6 @@
 import streamlit as st
 import math
+import time
 
 @st.dialog("PerioDetect")
 def show_intro():
